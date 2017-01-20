@@ -1,0 +1,12 @@
+version: 1
+
+dn: ou=Groups,dc=example,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: Groups
+
+dn: cn=USER,ou=Groups,dc=example,dc=org
+objectClass: top
+objectClass: groupOfNames
+cn: USER
+member: cn=user,ou=People,dc=example,dc=org

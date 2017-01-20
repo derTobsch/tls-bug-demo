@@ -1,0 +1,14 @@
+version:1
+
+dn: ou=People,dc=example,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: People
+
+# user
+dn: cn=user,ou=People,dc=example,dc=org
+sn: user
+cn: user
+userPassword: user
+objectClass: top
+objectClass: person
