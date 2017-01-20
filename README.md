@@ -14,7 +14,7 @@ Big Thanks to https://github.com/zivis
 
 ## With DefaultTlsDirContextAuthenticationStrategy
 
-1. Start a TLS connection and a lookup if the user `cn=user` is available.
+Start a TLS connection and a lookup if the user `cn=user` is available.
 
 ```bash
 588241ed conn=1011 fd=16 ACCEPT from IP=172.17.0.1:44150 (IP=0.0.0.0:389)
@@ -32,7 +32,7 @@ TLS: gnutls_certificate_verify_peers2 failed -49
 588241ee conn=1011 fd=16 closed
 ```
 
-2. Empty dn="" in `588241ee conn=1013 op=1 BIND dn="" method=128` forces an anonymous bind and allows the user the access with any password given
+Empty dn="" in `588241ee conn=1013 op=1 BIND dn="" method=128` forces an anonymous bind and allows the user the access with any password given
 
 ```bash
 588241ee conn=1012 fd=16 ACCEPT from IP=172.17.0.1:44158 (IP=0.0.0.0:389)
@@ -60,7 +60,7 @@ TLS: gnutls_certificate_verify_peers2 failed -49
 
 ## With FixDefaultTlsDirContextAuthenticationStrategy
 
-1. Start a TLS connection and a lookup if the user `cn=user` is available.
+Start a TLS connection and a lookup if the user `cn=user` is available.
 
 ```bash
 58824372 conn=1014 fd=16 ACCEPT from IP=172.17.0.1:44276 (IP=0.0.0.0:389)
@@ -78,7 +78,7 @@ TLS: gnutls_certificate_verify_peers2 failed -49
 58824373 conn=1014 fd=16 closed
 ```
 
-2. Here happens a bind with user credentials in `58824373 conn=1015 op=1 BIND dn="cn=user,ou=People,dc=example,dc=org" method=128` which is the actual authentication and the user with wrong credentials can not log in
+Here happens a bind with user credentials in `58824373 conn=1015 op=1 BIND dn="cn=user,ou=People,dc=example,dc=org" method=128` which is the actual authentication and the user with wrong credentials can not log in
 
 ```bash
 58824373 conn=1015 fd=16 ACCEPT from IP=172.17.0.1:44280 (IP=0.0.0.0:389)
